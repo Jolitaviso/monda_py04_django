@@ -4,8 +4,8 @@ from . import models
 
 
 class ProjectAdmin(admin.ModelAdmin):
-    list_display = ['name', 'total_tasks', 'undone_tasks', 'owner', 'recent_tasks']
-    list_display_links = ['name']
+    list_display = ['id', 'name', 'total_tasks', 'undone_tasks', 'owner', 'recent_tasks']
+    list_display_links = ['id', 'name']
     list_filter = ['owner']
     search_fields = ['name']
     fieldsets = (
@@ -30,7 +30,7 @@ class ProjectAdmin(admin.ModelAdmin):
 
 
 class TaskAdmin(admin.ModelAdmin):
-    list_display = ['name', 'is_done', 'deadline', 'project', 'owner', 'created_at']
+    list_display = ['id', 'name', 'is_done', 'deadline', 'project', 'owner', 'created_at']
     list_filter = ['is_done', 'deadline', 'created_at']
     search_fields = ['name', 'description', 'project__name', 'owner__last_name', 'owner__username']
     list_editable = ['is_done', 'owner', 'project']
