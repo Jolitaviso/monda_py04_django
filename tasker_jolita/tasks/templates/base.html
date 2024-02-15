@@ -1,4 +1,4 @@
-<!DOCTYPE html>{% load static %}
+<!DOCTYPE html>{% load static i18n %}
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -10,8 +10,8 @@
     <header>
         <span class="logo">TASKer</span>
         <ul class='nav'>
-            <li><a href="{% url 'index' %}">Dashboard</a></li>
-            <li><a href="{% url 'task_list' %}">Tasks</a></li>
+            <li><a href="{% url 'index' %}">{% trans "dashboard"|capfirst %}</a></li>
+            <li><a href="{% url 'task_list' %}">{%trans "tasks"|capfirst %}</a></li>
         </ul>
     </header>
     <section class="messages">
@@ -22,7 +22,7 @@
     <main>{% block content %}{% endblock content %}</main>    
     <footer>
         {% block footer %}{% endblock footer %}
-        <p>&copy; 2023/2024 <a style="float:right;" href="https://www.instagram.com/jolitaviso_/" target="_blank">Jolkute</a></p>
+        <p>&copy; 2023/2024 <a style="float:right;" href="https://www.instagram.com/jolitaviso_/" target="_blank">{%trans "jolituke"|capfirst%}</a></p>
     </footer>
 </body>
 </html>
