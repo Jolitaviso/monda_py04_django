@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-02-15 11:07+0000\n"
+"POT-Creation-Date: 2024-02-18 17:37+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -96,9 +96,9 @@ msgstr "užduotis"
 msgid "dashboard"
 msgstr "suvestinė"
 
-#: tasks/templates/base.html:25
-msgid "jolituke"
-msgstr "jolituke"
+#: tasks/templates/base.html:45
+msgid "susipažinkime"
+msgstr "susipažinkime"
 
 #: tasks/templates/tasks/index.html:3
 msgid "mur miau report"
@@ -127,3 +127,6 @@ msgstr "padaryta"
 #: tasks/views.py:33
 msgid "undone"
 msgstr "nepadaryta"
+
+#~ msgid "jolituke"
+#~ msgstr "jolituke"
