@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-02-18 17:37+0200\n"
+"POT-Creation-Date: 2024-02-19 21:04+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -58,11 +58,11 @@ msgstr "pavadinimas"
 msgid "owner"
 msgstr "savininkas"
 
-#: tasks/models.py:20 tasks/models.py:34 tasks/templates/tasks/index.html:5
+#: tasks/models.py:20 tasks/models.py:34
 msgid "project"
 msgstr "projektas"
 
-#: tasks/models.py:21
+#: tasks/models.py:21 tasks/templates/tasks/index.html:5
 msgid "projects"
 msgstr "projektai"
 
@@ -96,7 +96,27 @@ msgstr "užduotis"
 msgid "dashboard"
 msgstr "suvestinė"
 
-#: tasks/templates/base.html:45
+#: tasks/templates/base.html:15 tasks/templates/tasks/index.html:7
+msgid "information"
+msgstr ""
+
+#: tasks/templates/base.html:22
+msgid "admin"
+msgstr ""
+
+#: tasks/templates/base.html:24
+msgid "log out"
+msgstr ""
+
+#: tasks/templates/base.html:26
+msgid "log in"
+msgstr ""
+
+#: tasks/templates/base.html:27
+msgid "sign up"
+msgstr ""
+
+#: tasks/templates/base.html:52
 msgid "susipažinkime"
 msgstr "susipažinkime"
 

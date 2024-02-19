@@ -1,8 +1,7 @@
 from django.contrib import admin
 from django.utils.translation import gettext_lazy as _
 from . import models
-
-
+   
 class InformationAdmin(admin.ModelAdmin):
     list_display = [ 'name', 'owner', 'created_at']
     list_display_links = ['name', 'owner']
