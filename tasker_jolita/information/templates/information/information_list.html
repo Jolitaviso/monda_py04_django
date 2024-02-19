@@ -1,0 +1,15 @@
+{% extends "base.html" %}{% load i18n %}
+{% block title %}{{ block.super }} list{% endblock title %}
+{% block content %}
+<h1>{% trans "information"|capfirst %}</h1>
+<ul>
+{% for information in information_list %}
+    <li>
+        {{ information.created_at }}&nbsp;&nbsp;&nbsp;
+        <a href="{% url "information_detail" information.pk %}">{{ information.name }}</a>
+    </li>
+{%empty %}
+    <li>No Information Found</li>
+{% endfor %}
+<ul>
+{% endblock content %}
