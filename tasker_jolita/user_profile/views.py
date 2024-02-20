@@ -6,6 +6,8 @@ from django.shortcuts import render, redirect, get_object_or_404
 from django.utils.translation import gettext_lazy as _
 from . import forms
 
+User = get_user_model()
+
 def signup(request: HttpRequest) -> HttpResponse:
     if request.method == "POST":
         form = forms.CreateUserForm(request.POST)

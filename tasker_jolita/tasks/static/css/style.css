@@ -1,6 +1,8 @@
 body {
     background-color: #ffd2b4;
     background-image: url('/static/img/gelike.jpg');
+    background-size: cover; /* Paveikslėlis užims visą fono plotą */
+    background-repeat: no-repeat; 
     font-family: sans-serif;
     font-size: 16px;
     display: flex;
@@ -74,8 +76,8 @@ a:hover {
 
 
 h1, h2, h3, h4, h5, h6 {
-    background-color: #bbbbbb;
-    border-bottom: 1px solid #888888;
+    background-color: #ffd2b4;
+    border-bottom: 1px solid #ff6878;
     padding: 0.5rem;
     margin: 1rem 0;
 }
@@ -149,12 +151,15 @@ section.messages {
 }
 header form select {
     margin: 1rem;
-    font-size: 100%;
+    font-size: 120%;
+    padding: auto;
+    border-radius: 1rem;
+    
 }
 
 div.button {
     background-image: url('/static/img/gelike.jpg');
-    background-size: contain;
+    background-size: cover; /* gali būti ir toks - contain*/
     display: inline-block;
     border: 2px solid #ffcc00;
     border-radius: 1rem;
@@ -188,6 +193,7 @@ button, .button {
     background-color: #d8d8d8;
     border: 1px solid #666666;
     border-bottom: 2px solid #004488;
+    border-radius: 2rem;
     padding: 0.5rem;
     font-size: 120%;
     cursor: pointer;
@@ -200,4 +206,13 @@ button:hover, .button:hover {
 
 .toolbar {
     margin: 0.5rem ;
+}
+
+.toolbar form {
+    display: inline;
+}
+
+.toolbar form select {
+    padding: 0.4rem;
+    border-radius: 2rem;
 }
