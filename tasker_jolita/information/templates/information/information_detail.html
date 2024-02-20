@@ -1,5 +1,5 @@
 {% extends "base.html" %}{% load i18n %}
-{% block title %}{{ block.super }} | {{ task }}{% endblock title %}
+{% block title %}{{ block.super }} {{ task }}{% endblock title %}
 {% block content %}
 <h1> {{ information.name }}</h1>
 <p>{% trans "owner"|capfirst %}: {{ information.owner }} </p>
