@@ -10,9 +10,12 @@ body {
     margin: 0; 
     padding: 0;
     min-height: 100vh;
+    color: black;
+    /*font-weight: 750;*/
+
 }
 header {
-    background-color: #ffb4bc;
+    background-color: #ffa3aed6; /* graži spalva rūžava #ffb4bc;   nAUJA e6c0d6eb   , SENA IS VARIANTAS 2#d79bccc5 */ 
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -40,17 +43,19 @@ header ul.nav li a, header ul.nav li form button {
     margin: 0;
     padding: 0.5rem;
     border: none;
-    border-bottom: 2px solid #ffa468;
+    border-bottom: 2px solid #ff6878;
     cursor: pointer;
-    color: #ffa468;
+    /*color: #ffa468;*/
     font-size: 100%;
     border-radius: 0.5rem;
+    font-weight: 750;
+    font-style: normal;
 }
 
 header ul.nav li a:hover, header ul.nav li form button:hover {
-    background-color: #b8b8b8;
-    border-bottom: 2px solid #ff6878;
-    color: #ff6878;
+    background-color: #b8b8b8df;
+    border-bottom: 2px solid #ba52a7;
+    color: #ba52a7;
     text-decoration: none;
 
 }
@@ -60,35 +65,40 @@ main {
     background-color: #cccccc9f;
 }
 
-footer {
-    background-color: #fff1e7;
+footer { 
+    background-color: #e6c0d6eb;  /*#e6c0dff5; #e6c0dfef*  rgb(208, 137, 195).  čIA TA KUR IŠ 2 VARIANTO #d089c3eb */
 }
+
 a {
-    color: #ff6878;
+    color: black; /*graži tamsi violetinė spalva -#89377a; kitos spalvos   #ff6878; #ba52a7; #d089c3*/
     text-decoration: none;
-    font-weight: 700;
+    font-weight: bold;
+    font-style: italic;
+    /*font-weight: 700;*/
 }
 
 a:hover {
-    color: #ffa468;
-    text-decoration: underline;
+    color: #ba52a7;  /*graži spalva morkinė šviesi #ffa468;  */
+    text-decoration: double;
 }
 
 
 h1, h2, h3, h4, h5, h6 {
-    background-color: #ffd2b4;
+    background-color: #ffd2b4b8;
     border-bottom: 1px solid #ff6878;
     padding: 0.5rem;
     margin: 1rem 0;
+    color: #ffa468; /*#ffa468;  #ba52a7*/
 }
 
 p, main ul {
     padding: 0 0.5rem;
-    margin: 1rem 0;
+    margin: 0.5rem 0;
+    font-weight: bold;
 }
 
 main ul li {
-    border-bottom: 1px dotted #999999;
+    border-bottom: 4px dotted #999999;
 }
 
 main ul li.list-table-header {
@@ -108,7 +118,7 @@ footer p {
 }
 
 footer a {
-    color: #66aaff;
+    color: #d3e0c0;
 }
 
 footer a:hover {
@@ -153,7 +163,9 @@ header form select {
     margin: 1rem;
     font-size: 120%;
     padding: auto;
-    border-radius: 1rem;
+    border-radius: 0.5rem;
+    /*color: #d089c3eb; */
+    background-color: #ffd2b4;
     
 }
 
@@ -190,18 +202,22 @@ main form .helptext {
 }
 
 button, .button {
-    background-color: #d8d8d8;
+    background-color: #c8dce6;
     border: 1px solid #666666;
     border-bottom: 2px solid #004488;
     border-radius: 2rem;
+    margin: 0rem;
     padding: 0.5rem;
+    text-decoration: none;
+    cursor: pointer;
     font-size: 120%;
     cursor: pointer;
+    font-style: normal;
 }
 
 button:hover, .button:hover {
     background-color: #dfdfdf;
-    border-bottom: 2px solid #0055cc;
+   /* border-bottom: 2px solid #d3e0c0; ; */
 }
 
 .toolbar {
@@ -215,4 +231,8 @@ button:hover, .button:hover {
 .toolbar form select {
     padding: 0.4rem;
     border-radius: 2rem;
+    color: #89377a;
+    background-color: #c8dce6;
+    font-weight: 750;
+    
 }
