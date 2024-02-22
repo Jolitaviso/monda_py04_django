@@ -21,8 +21,6 @@ def signup(request: HttpRequest) -> HttpResponse:
         'form': form,
     })
     
-# Create your views here.
-
 @login_required
 def user_detail(request: HttpRequest, username: str | None = None) -> HttpResponse:
     if username:
