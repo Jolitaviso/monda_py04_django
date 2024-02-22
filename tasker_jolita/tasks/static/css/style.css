@@ -99,6 +99,9 @@ p, main ul {
 
 main ul li {
     border-bottom: 4px dotted #999999;
+    font-style: normal;
+    font-weight: lighter;
+
 }
 
 main ul li.list-table-header {
@@ -170,7 +173,7 @@ header form select {
 }
 
 div.button {
-    background-image: url('/static/img/gelike.jpg');
+    background-image: url('/static/img/ fields.jpg');
     background-size: cover; /* gali būti ir toks - contain*/
     display: inline-block;
     border: 2px solid #ffcc00;
@@ -235,4 +238,8 @@ button:hover, .button:hover {
     background-color: #c8dce6;
     font-weight: 750;
     
+}
+
+div.tube {
+    padding: 1rem;
 }

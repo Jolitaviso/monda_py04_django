@@ -13,7 +13,8 @@ class InformationAdmin(admin.ModelAdmin):
             "fields": (
                 'name',
                 'owner',
-                'description'
+                'description',
+                'youtube_video',
             ),
         }),
         (_("temporal tracking").title(),{

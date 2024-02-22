@@ -16,7 +16,7 @@ class Information(models.Model):
     
     created_at = models.DateTimeField(_("created at"), auto_now_add=True, db_index=True)
     updated_at = models.DateTimeField(_("updated at"), auto_now=True, db_index=True)
-    
+    youtube_video = models.CharField(_('Youtube video'), max_length=50, null=True, blank=True)
 
     class Meta:
         verbose_name = _("information")

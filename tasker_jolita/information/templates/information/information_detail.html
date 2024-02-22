@@ -4,6 +4,11 @@
 <h1> {{ information.name }}</h1>
 <p>{% trans "owner"|capfirst %}: {{ information.owner }} </p>
 <p>{{ information.description }}</p>
+{% if information.youtube_video %}
+<div class='tube'>
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/{{information.youtube_video}}" title="YouTube info" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+<div>
+{% endif %}
 <p>{% trans "created"|capfirst %}: {{ information.created_at }}{% if information.created_at != information.updated_at %},
     {% trans "updated" %}: {{ information.updated_at }}
 {% endif %}

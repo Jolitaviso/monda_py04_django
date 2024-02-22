@@ -11,11 +11,13 @@ class ProjectAdmin(admin.ModelAdmin):
     fieldsets = (
         (None, {
             "fields": (
-                'name', 'owner',
+                'name', 'owner', 'youtube_video'
             ),
         }),
     )
 
+    autocomplete_fields = ['owner']
+    
     def total_tasks(self, obj: models.Project):
         return obj.tasks.count()
     total_tasks.short_description = _("total tasks")
@@ -35,6 +37,7 @@ class TaskAdmin(admin.ModelAdmin):
     search_fields = ['name', 'description', 'project__name', 'owner__last_name', 'owner__username']
     list_editable = ['is_done', 'owner', 'project']
     readonly_fields = ['id', 'created_at', 'updated_at']
+    autocomplete_fields = ['project', 'owner']
     fieldsets = (
         (_("general").title(), {
             "fields": (
@@ -54,7 +57,6 @@ class TaskAdmin(admin.ModelAdmin):
         }),
     )
     
-
-
+    
 admin.site.register(models.Project, ProjectAdmin)
 admin.site.register(models.Task, TaskAdmin)

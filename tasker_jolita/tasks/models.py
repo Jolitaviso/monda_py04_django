@@ -12,15 +12,16 @@ class Project(models.Model):
         verbose_name=_("owner"), 
         related_name='projects',
     )
-
-    def __str__(self):
-        return self.name
+    youtube_video = models.CharField(_('Youtube video'), max_length=50, null=True, blank=True)
 
     class Meta:
         verbose_name = _("project")
         verbose_name_plural = _("projects")
         ordering = ['name']
-
+        
+    def __str__(self):
+        return self.name
+    
     def get_absolute_url(self):
         return reverse("project_detail", kwargs={"pk": self.pk})
 

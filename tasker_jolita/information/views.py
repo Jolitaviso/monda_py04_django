@@ -13,5 +13,3 @@ def information_detail(request: HttpRequest, pk:int) -> HttpResponse:
     return render(request, 'information/information_detail.html', {
         'information': get_object_or_404(models.Information, pk=pk),
     })    
-
-
