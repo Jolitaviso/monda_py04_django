@@ -8,6 +8,7 @@ from django.shortcuts import render, get_object_or_404, redirect
 from django.urls import reverse
 from django.utils.translation import gettext_lazy as _
 from . import models
+from datetime import datetime
 from typing import Any
 
 class ProjectListView(generic.ListView):
@@ -79,11 +80,74 @@ class ProjectDeleteView(
     
     
 def index(request: HttpRequest) -> HttpResponse:
+    tasks = models.Task.objects
+    undone_tasks = tasks.filter(is_done=False)
+    common_dashboard = [
+        (_('user').title(), get_user_model().objects.count()),
+        (
+            _('projects').title(),
+            models.Project.objects.count(),
+            reverse('project_list'),
+        ),
+        (
+            _('tasks').title(),
+            tasks.count(),
+            reverse('task_list'),
+        ),
+        (
+            _('undone tasks').title(),
+            undone_tasks.count(),
+        ),
+        (
+            _('undone tasks').title(),
+            undone_tasks.count(),
+        ),
+        (
+            _('overdue tasks').title(),
+            
+undone_tasks.filter(deadline__lte=datetime.now()).count(),
+        ),
+        (
+            _('done tasks'). title(), 
+            tasks.filter(is_done=True).count(),
+        ),
+    ]
+    if request.user.is_authenticated:
+        user_tasks = tasks.filter(owner=request.user)
+        user_undone_tasks = user_tasks.filter(is_done=False)
+        user_dashboard = [
+            (
+                _('projects').title(), 
+                models.Project.objects.filter(owner=request.user).count(), 
+                reverse('project_list') + f"?owner={request.user.username}",
+            ),
+            (
+                _('tasks').title(), 
+                user_tasks.count(),
+                reverse('task_list') + f"?owner={request.user.username}",
+            ),
+            (
+                _('undone tasks').title(), 
+                user_undone_tasks.count(),
+            ),
+            (
+                _('overdue tasks').title(), 
+                user_undone_tasks.filter(deadline__lte=datetime.now()).count(),
+            ),
+        ]
+        undone_tasks = user_undone_tasks.all()[:5]
+    else:
+        user_dashboard = None
+        undone_tasks = undone_tasks.all()[:5]
+    #context = {
+        # 'projects_count': models.Project.objects.count(),
+        # 'tasks_count': models.Task.objects.count(),
+        # 'users_count': models.get_user_model().objects.count(),
     context = {
-        'projects_count': models.Project.objects.count(),
-        'tasks_count': models.Task.objects.count(),
-        'users_count': models.get_user_model().objects.count(),
-    }
+        'common_dashboard': common_dashboard,
+        'user_dashboard': user_dashboard,
+        'undone_tasks': undone_tasks,
+        }
     return render(request, 'tasks/index.html', context)
 
 def task_list(request: HttpRequest) -> HttpResponse:
