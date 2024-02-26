@@ -11,7 +11,7 @@ class ProjectAdmin(admin.ModelAdmin):
     fieldsets = (
         (None, {
             "fields": (
-                'name', 'owner', 'youtube_video'
+                'name', 'owner', 'youtube_video', 'description'
             ),
         }),
     )
@@ -56,7 +56,9 @@ class TaskAdmin(admin.ModelAdmin):
             ),
         }),
     )
-    
+ 
+class ProjectLikeAdmin(admin.ModelAdmin):
+    list_display = ['project', 'user', 'like_type']    
     
 admin.site.register(models.Project, ProjectAdmin)
 admin.site.register(models.Task, TaskAdmin)

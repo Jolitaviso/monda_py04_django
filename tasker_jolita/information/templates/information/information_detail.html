@@ -1,7 +1,14 @@
 {% extends "base.html" %}{% load i18n %}
 {% block title %}{{ block.super }} {{ task }}{% endblock title %}
 {% block content %}
-<h1> {{ information.name }}</h1>
+<h1> {{ information.name }}
+    {% if request.user.is_authenticated %}
+    <a href="{% url 'information_like' information.pk %}?next={{ request.path }}">&#128077;</a>
+    {% else %}
+    &#128077;
+    {% endif %}
+    {{information.likes.count }}
+</h1>
 <p>{% trans "owner"|capfirst %}: {{ information.owner }} </p>
 <p>{{ information.description }}</p>
 {% if information.youtube_video %}

@@ -23,7 +23,8 @@ class InformationAdmin(admin.ModelAdmin):
             ),
         }),
     )
-
+class ProjectLikeAdmin(admin.ModelAdmin):
+    list_display = ['information', 'user', 'like']
 
 admin.site.register(models.Information, InformationAdmin)
 

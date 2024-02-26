@@ -4,10 +4,13 @@ from django.contrib.auth import get_user_model
 from django.urls import reverse
 from django.utils.translation import gettext as _
 from PIL import Image
+import os
+from tinymce.models import HTMLField
 
 
 class Profile(models.Model):
     user = models.OneToOneField(get_user_model(), verbose_name=_("user"), on_delete=models.CASCADE)
+    description = HTMLField(_("description"), max_length=10000, null=True, blank=True)
     picture = models.ImageField(_("picture"), upload_to='user_pictures/', blank=True, null=True)
 
     class Meta:
@@ -22,7 +25,7 @@ class Profile(models.Model):
 
     def save(self, *args, **kwargs) -> None:
         super().save(*args, **kwargs)
-        if self.picture:
+        if self.picture and os.path.exists(self.picture.path):
             image = Image.open(self.picture.path)
             if image.size[0] > 400 or image.size[1] > 300:
                 image.resize((400, 300))
